@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Inserir Cards</title>
+  </head>
+  <body class="login__body">
+    <div class="container__login">
+      <h1>Inserir Card</h1>
+
+      <form id="form_add_card">
+        <div class="campo">
+          <label for="titulo">Título</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Título..."
+          />
+
+          <label for="descricao">Descrição</label>
+          <textarea
+            name="descricao"
+            id="descricao"
+            placeholder="Descrição..."
+          ></textarea>
+
+          <label for="url">Url</label>
+          <input type="url" name="url" id="url" placeholder="Url..." />
+          
+          <input class="btn_enviar" type="submit" value="Enviar" />
+        </div>
+        <label class="switch">
+          <input type="checkbox" class="btn_dark_mode" />
+          <span class="slider round"></span>
+        </label>
+      </form>
+    </div>
+    <section class="containercards" id="containercards"></section>
+
+    <script src="./src/index.js"></script>
+  </body>
+</html>
