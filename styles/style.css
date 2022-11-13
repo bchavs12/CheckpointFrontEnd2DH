@@ -1,160 +1,166 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url(animations.css);
 @import url(responsive.css);
 
+:root {
+  --primary-color: #fd951f;
+  --bg-color: #130f0d;
+  --text-color: #f0f0f5;
+  --btn-hover-color:#a35e0f;
+  --light-color: rgba(255, 255, 255, 0.04);
+}
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
 }
 
 html {
-  width: 100%;
-  height: auto;
-  /* A cada 1rem será considerado 10px */
-  font-size: 62.5%;
-}
-
-body{
-  width: 100%;
+  font-family: "Roboto", sans-serif;
   height: 100%;
 }
 
-.container__login {
-  max-width: 30rem;
-  width: 100%;
-  height: 26rem;
-  margin: 10px auto;
+body {
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
-  background-color: rgb(10, 13, 112);
+
+  background-color: #130f0d;
+  color: #f0f0f5;
 }
 
-input{
-  margin: 10px auto;
+form {
+  background: rgba(255, 255, 255, 0.03);
+
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 12px 29px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+form h2 {
+  margin-bottom: 32px;
   text-align: center;
+  font-weight: 800;
 }
 
-.container__login h1 {
-  display: flex;
-  align-self: center;
-  color: rgb(150, 142, 142);
-  margin-bottom: 2rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.login__body {
-  background-color: rgb(177, 177, 174);
-  transition: 2s;
-}
-
-.containercards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  max-width: 30rem;
-  width: 100%;
-  height: 48rem;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  background: linear-gradient(78.15deg, #dad5d5ad 36.62%, #b1afaf 45.61%);
-  box-shadow: 1rem 1rem 2rem rgb(26, 25, 25);
-}
-
-.btnremove {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-self: flex-end;
-  font-weight: bold;
-  font-size: 1.8rem;
-  cursor: pointer;
-  background-color: rgb(204, 135, 135);
-  border-style: none;
-}
-
-.cardsimg {
-  max-width: 300rem;
-  width: 100%;
-  height: 22.0rem;
-  border-top-left-radius: 2.5rem;
-  border-bottom-left-radius: 2.5rem;
-  border-bottom-right-radius: 2.5rem;
-}
-
-.cardtitulo {
-  justify-items: justify;
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.cardsconteudo {
-  padding: 2rem 3rem;
-  justify-content: center;
-  font-size: 1.8rem;
-  font-family: "Dancing Script", cursive;
-  font-family: "Gentium Plus", serif;
-  font-family: "Pacifico", cursive;
-  font-family: "Teko", sans-serif;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-}
-
-.campo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.6rem;
-  color: rgb(150, 142, 142);
-}
-
-.btn_enviar {
-  margin-top: 0.8rem;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-/* The switch - the box around the slider */
-.switch {
+div.input {
+  margin-bottom: 24px;
   position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 28px;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+input,
+button, textarea {
+  /* reset appeareance */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* box */
+  width: 100%;
+
+  padding: 16px 0;
+
+  border:none;
+  border-bottom: 1px solid var(--primary-color);
+
+  background-color: transparent;
+
+  outline: none;
+
+  /* text */
+  color: var(--text-color);
+  font-size: 1em;
+
 }
 
-/* The slider */
-.slider {
-  position: absolute;
+button {
+  margin-top: 16px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(73, 26, 26);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  border: none;
 }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
+input ~ label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+
+  color: rgba(255, 255, 255, 0.6) ;
+
+  transition: .4s;
+}
+
+
+input:focus ~ label,
+input:valid ~ label {
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+textarea ~ label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+
+  color: rgba(255, 255, 255, 0.6) ;
+
+  transition: .4s;
+}
+
+textarea:focus ~ label,
+textarea:valid ~ label {
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+
+.input span.error {
+  display: flex;
+  
+  padding: 0;
+
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.input span.error.active {
+  border: 1px solid red;
+  padding: 0.4em;
+}
+
+.cardsimg{
+  max-width: 450px;
+  max-height: 450px;
+}
+
+.btnremove{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  position: absolute;
+  left: 92%;
+  margin-top: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.cards{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }

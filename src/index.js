@@ -1,10 +1,55 @@
-const form = document.querySelector("#form_add_card")
+let form = document.querySelector("#form_add_card");
+console.log(form)
+
+let inputTitulo = document.getElementById("titulo");
+let inputDescricao = document.querySelector("#descricao");
+let inputUrl = document.querySelector("#url");
+let botaoSubmit = document.querySelector("#enviar");
+window.addEventListener('load', () => {
+    botaoSubmit.disabled = true;
+    botaoSubmit.style.backgroundColor = "#a35e0f";
+});
+
+let validacaoTitulo = document.querySelector("#validaTitulo");
+let validacaoDescricao = document.querySelector("#validaDescricao");
+let validacaoUrl = document.querySelector("#validaUrl");
+let validacaoGeral = false;
+
+inputTitulo.addEventListener("mouseout", () => validaCampos("titulo"));
+inputDescricao.addEventListener("mouseout", () => validaCampos("descricao"));
+inputUrl.addEventListener("mouseout", () => validaCampos("url"));
+
+function validaCampos(nomeCampo){
+    if(nomeCampo=="titulo" && inputTitulo.value.length<4){
+        validacaoTitulo.textContent = "Titulo precisa ter no minimo 4 caracteres";
+    }else if(nomeCampo=="titulo" && inputTitulo.value.length>=4){
+        validacaoTitulo.textContent = "";
+    }
+
+    if(nomeCampo=="descricao" && inputDescricao.value.length<4){
+        validacaoDescricao.textContent = "Descricao precisa ter no minimo 4 caracteres";
+    }else if(nomeCampo=="descricao" && inputDescricao.value.length>=4){
+        validacaoDescricao.textContent = "";
+    }
+
+    if(nomeCampo=="url" && !( inputUrl.value.includes(".jpg") || inputUrl.value.includes(".png") || inputUrl.value.includes(".jpeg") )){
+        validacaoUrl.textContent = "Informe uma URL de imagem válida!";
+    }else if(nomeCampo=="url"){
+        validacaoUrl.textContent = "";
+    }
+
+    if(validacaoUrl.textContent != "" || validacaoTitulo.textContent != "" || validacaoDescricao.textContent != "" 
+        || inputUrl.value == "" || inputTitulo.value == "" || inputDescricao.value == "" ){
+        botaoSubmit.disabled = true;
+        botaoSubmit.style.backgroundColor = "#a35e0f";
+    }else{
+        botaoSubmit.disabled = false;
+        botaoSubmit.style.backgroundColor = "#fd951f";
+    }
+}
+
 form.addEventListener("submit", function (event) {
     event.preventDefault();
-
-    let inputTitulo = document.querySelector("#titulo")
-    let inputDescricao = document.querySelector("#descricao")
-    let inputUrl = document.querySelector("#url")
 
     let tituloh3 = document.createElement('h3')
     tituloh3.classList = "cardtitulo"
@@ -14,14 +59,6 @@ form.addEventListener("submit", function (event) {
     imagem.classList = "cardsimg"
     let btnRemover = document.createElement('button')
     btnRemover.classList = "btnremove"
-
-    if (inputTitulo.value == "" || inputDescricao.value == "" || inputUrl.value == "") {
-        return alert("Favor preencher todos os campos.")
-    }
-
-    if (inputTitulo.value.length < 4 || inputDescricao.value.length < 4) {
-        return alert("Título e Descrição precisam ter 4 caracteres ou mais.")
-    }
 
     tituloh3.innerHTML = inputTitulo.value
     descricaop.innerHTML = inputDescricao.value
@@ -34,8 +71,13 @@ form.addEventListener("submit", function (event) {
 
     let divCard = document.createElement('div')
     divCard.classList = "cards"
-    divCard.appendChild(btnRemover)
-    divCard.appendChild(imagem)
+    let divImage = document.createElement('div')
+    divImage.style.position = "relative";
+    divImage.style.width = "450px";
+
+    divCard.appendChild(divImage)
+    divImage.appendChild(btnRemover)
+    divImage.appendChild(imagem)
     divCard.appendChild(tituloh3)
     divCard.appendChild(descricaop)
     divCard.style.textAlign = "center";
@@ -48,8 +90,8 @@ form.addEventListener("submit", function (event) {
     })
 })
 
-const btnDarkMode = document.querySelector(".btn_dark_mode")
+/*const btnDarkMode = document.querySelector(".btn_dark_mode")
 btnDarkMode.addEventListener("click", function () {
     var element = document.body
     element.classList.toggle("dark_mode");
-})
+})*/

@@ -9,7 +9,7 @@
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  
+
   input:checked + .slider {
     background-color: #2196f3;
   }
@@ -27,8 +27,7 @@
 .slider.round:before {
     border-radius: 50%;
   }
-  
-  .dark_mode {
-    transition: 2s;
-    background-color: black;
-  }
+
+.btnremove:hover{
+  transform: scale(1.2);
+}
