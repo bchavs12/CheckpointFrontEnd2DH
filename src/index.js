@@ -38,6 +38,7 @@ form.addEventListener("submit", function (event) {
     divCard.appendChild(imagem)
     divCard.appendChild(tituloh3)
     divCard.appendChild(descricaop)
+    divCard.style.textAlign = "center";
 
     let secao = document.querySelector("#containercards")
     secao.appendChild(divCard)

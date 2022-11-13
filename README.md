@@ -17,8 +17,10 @@ Esse projeto foi desenvolvido para demonstrar todo conhecimento adquirido na dis
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- HTML e CSS
-- JavaScript e JSON
+- HTML
+- CSS (Animation and Design Responsive)
+- JavaScript(Eventos Dom, manipulação e validação de dados)
+- Document Object Model (DOM)
 
 ## 💻 Projeto
 
