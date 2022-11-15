@@ -5,7 +5,7 @@
   --primary-color: #fd951f;
   --bg-color: #130f0d;
   --text-color: #f0f0f5;
-  --btn-hover-color:#a35e0f;
+  --btn-hover-color: #a35e0f;
   --light-color: rgba(255, 255, 255, 0.04);
 }
 
@@ -17,26 +17,29 @@
 }
 
 html {
-  font-family: "Roboto", sans-serif;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
+  /* A cada 1rem será considerado 10px */
+  font-size: 62.5%;
 }
 
 body {
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
 
   background-color: #130f0d;
   color: #f0f0f5;
+  font-family: 'Inter';
 }
 
 form {
   background: rgba(255, 255, 255, 0.03);
 
-  width: 100%;
   max-width: 400px;
-  margin: 20px auto;
+  width: 100%;
+  margin: 25px auto;
   padding: 12px 29px;
 
   display: flex;
@@ -47,15 +50,18 @@ form h2 {
   margin-bottom: 32px;
   text-align: center;
   font-weight: 800;
+  font-size: 2.5rem;
 }
 
 div.input {
   margin-bottom: 24px;
   position: relative;
+  font-size: 1.5rem;
 }
 
 input,
-button, textarea {
+button,
+textarea {
   /* reset appeareance */
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -66,7 +72,7 @@ button, textarea {
 
   padding: 16px 0;
 
-  border:none;
+  border: none;
   border-bottom: 1px solid var(--primary-color);
 
   background-color: transparent;
@@ -85,82 +91,132 @@ button {
   border-radius: 5px;
   cursor: pointer;
   border: none;
+  font-size: 1.6rem;
 }
 
-input ~ label {
+input~label {
   position: absolute;
   top: 16px;
   left: 0;
 
-  color: rgba(255, 255, 255, 0.6) ;
+  color: rgba(255, 255, 255, 0.6);
 
   transition: .4s;
+  font-size: 1.6rem;
 }
 
 
-input:focus ~ label,
-input:valid ~ label {
+input:focus~label,
+input:valid~label {
   transform: translateY(-24px);
   font-size: 0.8em;
   letter-spacing: 0.1em;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
-textarea ~ label {
+textarea~label {
   position: absolute;
   top: 16px;
   left: 0;
 
-  color: rgba(255, 255, 255, 0.6) ;
+  color: rgba(255, 255, 255, 0.6);
 
   transition: .4s;
+
 }
 
-textarea:focus ~ label,
-textarea:valid ~ label {
+textarea:focus~label,
+textarea:valid~label {
   transform: translateY(-24px);
-  font-size: 0.8em;
   letter-spacing: 0.1em;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 
 .input span.error {
   display: flex;
-  
+
   padding: 0;
 
   background-color: rgba(255, 0, 0, 0.2);
+  font-size: 1.3rem;
 }
 
 .input span.error.active {
   border: 1px solid red;
   padding: 0.4em;
+  font-size: 1.3rem;
 }
 
-.cardsimg{
-  max-width: 450px;
-  max-height: 450px;
-}
-
-.btnremove{
-  width: 30px;
-  height: 30px;
-  text-align: center;
+#containercards {
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
-  padding: 10px;
-  border-radius: 15px;
-  position: absolute;
-  left: 92%;
-  margin-top: 5px;
-  transition: 0.5s ease-in-out;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.cards{
+
+
+
+.cards {
   display: flex;
   align-content: center;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  max-width: 48rem;
+  width: 100%;
+  height: 48rem;
+}
+
+.divImg{
+  width: 100%;
+  height: 30rem;
+  position: relative;
+}
+
+.cardsimg{
+  width:100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.divDescricao{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.cardtitulo {
+  font-size: 2rem;
+  font-weight: 800;
+  word-break: break-all;
+  margin-top: 10px;
+}
+
+.cardsconteudo {
+  text-align: center;
+  font-size: 1.5rem;
+  word-break: break-all;
+}
+
+.btnremove {
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 13px;
+  border-radius: 15px;
+  position: absolute;
+  left: 1%;
+  margin-top: 5px;
+  transition: 0.5s ease-in-out;
 }

@@ -72,15 +72,16 @@ form.addEventListener("submit", function (event) {
     let divCard = document.createElement('div')
     divCard.classList = "cards"
     let divImage = document.createElement('div')
-    divImage.style.position = "relative";
-    divImage.style.width = "450px";
+    divImage.classList = "divImg"
+    let divdescricao = document.createElement('div')
+    divdescricao.classList = "divDescricao"
 
     divCard.appendChild(divImage)
     divImage.appendChild(btnRemover)
     divImage.appendChild(imagem)
-    divCard.appendChild(tituloh3)
-    divCard.appendChild(descricaop)
-    divCard.style.textAlign = "center";
+    divCard.appendChild(divdescricao)
+    divdescricao.appendChild(tituloh3)
+    divdescricao.appendChild(descricaop)
 
     let secao = document.querySelector("#containercards")
     secao.appendChild(divCard)
