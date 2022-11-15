@@ -29,11 +29,11 @@ com links das imagens fornecidas no formulário
 
 ## 🔖 Layout
 
-<img src="">
+<img src="./assets/layout-readme.png">
 
 ---
 
-## <img src="./assets/Devs-icon.png" width="30px" align="center"> Desenvolvedores do Projeto:
+## 💻 Desenvolvedores do Projeto:
 
 Bruno Chaves(https://github.com/bchavs12),<br> Erick Pereira(https://github.com/Erick-Pereira-Araujo), <br>
 Felipe Estevão(https://github.com/Felipeestevao01)

@@ -21,6 +21,7 @@ html {
   height: 100vh;
   /* A cada 1rem será considerado 10px */
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -167,7 +168,7 @@ textarea:valid~label {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  max-width: 48rem;
+  max-width: 40rem;
   width: 100%;
   height: 48rem;
 }
